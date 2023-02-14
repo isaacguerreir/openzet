@@ -1,0 +1,11 @@
+name: Update zets
+on:
+  repository_dispatch:
+    types: [update-zet]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+ 
