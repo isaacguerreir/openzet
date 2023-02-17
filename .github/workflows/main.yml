@@ -24,7 +24,8 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.TOKEN }}
-          branch: ${{ github.ref }}
+          branch: prime
+          repository: isaacguerreir/openzet
       - uses: actions/checkout@v3
 
  
