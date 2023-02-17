@@ -8,4 +8,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: |
+        mkdir $GITHUB_WORKSPACE/out
+        cd $GITHUB_WORKSPACE/out
+        git clone https://isaacguerreir:${{ secrets.TOKEN }}@github.com/isaacguerreir/zet.git 
+      - run: bash $GITHUB_WORKSPACE/.github/scripts/relations.sh
+      - name: Commit files
+        run: |
+          git config --local user.email "isaacguerreirocom@gmail.com"
+          git config --local user.name "isaacguerreir"
+          git add .
+          git diff-index --cached --quiet HEAD || git commit -m "Update zets"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          branch: ${{ github.ref }}
+      - uses: actions/checkout@v3
+
  
