@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-        mkdir $GITHUB_WORKSPACE/out
-        cd $GITHUB_WORKSPACE/out
-        git clone https://isaacguerreir:${{ secrets.TOKEN }}@github.com/isaacguerreir/zet.git 
+          mkdir $GITHUB_WORKSPACE/out
+          cd $GITHUB_WORKSPACE/out
+          git clone https://isaacguerreir:${{ secrets.TOKEN }}@github.com/isaacguerreir/zet.git 
       - run: bash $GITHUB_WORKSPACE/.github/scripts/relations.sh
       - name: Commit files
         run: |
