@@ -12,7 +12,7 @@ jobs:
           mkdir $GITHUB_WORKSPACE/out
           cd $GITHUB_WORKSPACE/out
           git clone https://isaacguerreir:${{ secrets.TOKEN }}@github.com/isaacguerreir/zet.git 
-      - run: bash $GITHUB_WORKSPACE/.github/scripts/relations.sh
+      - run: bash $GITHUB_WORKSPACE/.github/scripts/copy-public.sh
       - name: Commit files
         run: |
           git config --local user.email "isaacguerreirocom@gmail.com"
