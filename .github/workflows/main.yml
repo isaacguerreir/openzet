@@ -13,6 +13,7 @@ jobs:
           cd $GITHUB_WORKSPACE/out
           git clone https://isaacguerreir:${{ secrets.TOKEN }}@github.com/isaacguerreir/zet.git 
       - run: bash $GITHUB_WORKSPACE/.github/scripts/copy-public.sh
+      - run: bash $GITHUB_WORKSPACE/.github/scripts/get-posts-metadata.sh
       - run: rm -rf $GITHUB_WORKSPACE/out
       - name: Commit files
         run: |
