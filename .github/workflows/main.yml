@@ -12,8 +12,9 @@ jobs:
           mkdir $GITHUB_WORKSPACE/out
           cd $GITHUB_WORKSPACE/out
           git clone https://isaacguerreir:${{ secrets.TOKEN }}@github.com/isaacguerreir/zet.git 
-      - run: bash $GITHUB_WORKSPACE/.github/scripts/copy-public.sh
-      - run: bash $GITHUB_WORKSPACE/.github/scripts/get-posts-metadata.sh
+      - run: bash $GITHUB_WORKSPACE/.github/scripts/copy-public
+      - run: bash $GITHUB_WORKSPACE/.github/scripts/get-posts-metadata
+      - run: bash $GITHUB_WORKSPACE/.github/scripts/build-readme
       - run: rm -rf $GITHUB_WORKSPACE/out
       - name: Commit files
         run: |
