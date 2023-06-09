@@ -13,7 +13,7 @@ touch $readme
 
 title="# openzet"
 subtitle='`openzet` is my personal repository of open zet cards. Each card have a summarized content related to some topic created so I can remember things on the future. Zet is shorter for [Zettlekasten](https://en.wikipedia.org/wiki/Zettelkasten) a information system for personal knowledge base.<br><br>'
-content=$(cat $out_folder/data | sort -r | awk -F'#' '{print substr($1, 0, 19) " " "[" $3 "]" "(" $2  ")<br>"}')
+content=$(cat $out_folder/data | sort -r | awk -F'#' '{print substr($1, 0, 19) " " "[" $3 "]" "(" $2  ")<br>"; printf ""}')
 
 echo $title >> $readme 
 echo $subtitle >> $readme 
