@@ -1,15 +1,13 @@
 #!/bin/bash
 
-
-
-
 if [ "$GITHUB_WORKSPACE" == "" ]; then
-  posts=./cards/**/README.md 
   out_folder=./out
 else
-  posts=$GITHUB_WORKSPACE/cards/**/README.md 
+  cd $GITHUB_WORKSPACE
   out_folder=$GITHUB_WORKSPACE/out
 fi
+
+posts=./cards/**/README.md 
 
 touch $out_folder/names
 touch $out_folder/paths
